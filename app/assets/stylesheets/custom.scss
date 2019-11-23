@@ -68,6 +68,46 @@ p {
   text-decoration: none;
 }
 
+// ----------------------------------
+.navbar{
+  background-color: teal;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    color: white;
+}
+
+
+
+.header-list{
+  font-weight: bold;
+}
+
+.header-list:hover{
+  color: gray!important;
+}
+
+.navbar-inverse .navbar-nav > .open > a:focus {
+    background-color: rgba(255,255,255,0.0);
+}
+
+.dropdown-menu-bar{
+  background-color: #f5f5f5;
+  font-size: 12px;
+  padding: 3px 20px;
+}
+// -----------------------------------
+/* トップページ */
+.jumbotron{
+  background-color: rgba(255,255,255,0.0);
+}
+
+.jumbotron > .btn{
+  background-color: #32cd32;
+}
+
+
+
 /* デバッグウインドウ */
 
 .debug_dump {
