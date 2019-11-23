@@ -8,22 +8,24 @@
         <p>TaskAppは簡易ToDo管理ツールです。</p>
         <p>↓↓初めてのご利用↓↓</p>
           <div>
-            <%= link_to "アカウント作成", signup_path, class: "btn btn-lg btn-primary" %>
+            <%= link_to "アカウント作成", signup_path, class: "btn btn-lg btn-success" %>
           </div>
       </div>  
     </div>
     
-    <div class="top-right">
+    <div class="col-md-4">
       <h1>ログイン</h1>
-      <p>メールアドレス</p>
-      <input name="email">
-      <p>パスワード</p>
-      <input name="password">
-      <input type="checkbox" name="keeper" value="ログイン情報を記憶する">
-      <input type="submit" value="ログイン">
-      <center>
-        <%= link_to "ログイン", login_path, class: "btn btn-lg btn-primary" %>
-      </center>
+        <%= form_tag log_in_path do %>
+          <p>メールアドレス</p>
+          <input name="email">
+          <p>パスワード</p>
+          <input name="password">
+          <input type="checkbox" name="keeper" value="ログイン情報を記憶する">
+          <input type="submit" value="ログイン" >
+          <center>
+            <%= link_to "ログイン", login_path, class: "btn btn-lg btn-primary" %>
+          </center>
+        <% end %>
     </div>
   </div>
 </div>
