@@ -1,2 +1,28 @@
-<h1>Tasks#index</h1>
-<p>Find me in app/views/tasks/index.html.erb</p>
+<% provide(:title, 'tasks') %>
+<h1>管理者のタスク一覧</h1>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <%= link_to "タスク新規作成", new_task_path, class: "btn btn-lg btn-primary pull-right" %>
+     <table>
+       <thead>
+         <tr>
+           <th>名称</th>
+           <th>作成日</th>
+           <th></th>
+         </tr>
+       </thead>
+       <tbody>
+         <tr>
+         <% @tasks.each do |task| %>
+         <div class="tasks-index">
+           <th><%= link_to task.task_title, task_path(task.id) %></th>
+         </div>
+         <% end %>
+         </tr>
+       </tbody>
+     </table>
+    </div>
+  </div>
+</div>

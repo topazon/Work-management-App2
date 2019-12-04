@@ -13,10 +13,11 @@
 ActiveRecord::Schema.define(version: 20191124092718) do
 
   create_table "tasks", force: :cascade do |t|
-    t.date "worked_on"
+    t.text "task_title"
+    t.date "created_on"
     t.datetime "started_at"
     t.datetime "finished_at"
-    t.string "note"
+    t.text "details"
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
