@@ -4,11 +4,36 @@
     <div class="tasks-show-item">
       <h1>タスク詳細</h1>
         <div class="task-show-contents">
-          <table>
-            
+          <table class="task_contents">
+            <tr>
+              <th>ID</th>
+              <td><%= @task.id %></td>
+            </tr>
+            <tr>
+              <th>名称</th>
+              <td><%= @task.task_title %></td>
+            </tr>
+            <tr>
+              <th>詳細</th>
+              <td><%= raw Rinku.auto_link(@task.details) %></td>
+            </tr>
+            <tr>
+              <th>作成日</th>
+              <td><%= l(@task.created_at,format: :long) %></td>
+            </tr>
+            <tr>
+              <th>更新日</th>
+              <td><%= l(@task.updated_at,format: :long) %></td>
+            </tr>
           </table>
            
+           <%= link_to  "編集", edit_task_path(@task.id),class: "btn btn-sm btn-success"%>
+           <%= link_to  "削除", task_path, method: :delete,
+               data: { confirm: "削除してよろしいですか？"},
+               class: "btn btn-sm btn-danger"%>
         </div>
     </div>
   </div>
 </div>
+
+<!--,format: :default -->
